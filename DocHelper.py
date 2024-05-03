@@ -16,7 +16,7 @@ if __name__ == '__main__':
     file_list = sorted([f for f in os.listdir("Document") if f.endswith('.md')])
 
     # 创建或打开README.md文件
-    with open('README.md', 'rw') as outfile:
+    with open('README.md', 'r+') as outfile:
         for fname in file_list:
             with open(os.path.join("Document", fname)) as infile:
                 # 将每个文件的内容写入README.md
