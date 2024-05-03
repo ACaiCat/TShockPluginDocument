@@ -8,7 +8,7 @@ import urllib.request
 
 
 def md_to_pdf(file_name):
-    os.system(f"pandoc --pdf-engine=xelatex  -V mainfont=LXGWWenKaiMono-Regular.ttf -V geometry:margin=0.5in  -V geometry:b5paper --template eisvogel.tex  {file_name} -o {file_name.replace('.md', '.pdf')}")
+    os.system(f"pandoc --pdf-engine=xelatex  -V mainfont=LXGWWenKaiMono-Regular.ttf -V geometry:margin=0.5in  -V geometry:a2paper --template eisvogel.tex  {file_name} -o {file_name.replace('.md', '.pdf')}")
 
 if __name__ == '__main__':
     print(f"🚀 开始执行打包脚本...(By Cai 😋)")
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     file_list = sorted([f for f in os.listdir("Document") if f.endswith('.md')])
 
     # 创建或打开README.md文件
-    with open('README.md', 'w') as outfile:
+    with open('README.md', 'rw') as outfile:
         for fname in file_list:
             with open(os.path.join("Document", fname)) as infile:
                 # 将每个文件的内容写入README.md
