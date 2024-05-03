@@ -276,7 +276,7 @@ args.Player.SendWarningMessage("我是SendWarningMessage~");
 args.Player.SendErrorMessage("我是SendErrorMessage~");
 ```
 
-![1704009143876.png](https://attachment.bbstr.net/forum/2023/12/6652_e946250f93dfa1a831ec9baa8cb06cd0.png "1704009143876.png")
+![1704009143876.png](Resourse/6652_e946250f93dfa1a831ec9baa8cb06cd0.png "1704009143876.png")
 
   
 2.SendFileTextAsMessage  
@@ -297,7 +297,7 @@ args.Player.SendFileTextAsMessage("tshock/motd.txt"); //相对路径
 输入 [c/55D284:%specifier%][c/62D27A:h][c/6FD16F:e][c/7CD165:l][c/89D15A:p] 获取更多帮助信息.
 ```
 
-![1704009311526.png](https://attachment.bbstr.net/forum/2023/12/6653_d1b0a2ea6eb254a155993fec6cc2b144.png "1704009311526.png")
+![1704009311526.png](Resourse/6653_d1b0a2ea6eb254a155993fec6cc2b144.png "1704009311526.png")
 
   
   
@@ -334,9 +334,9 @@ else
 }
 ```
 
-![1704009050484.png](https://attachment.bbstr.net/forum/2023/12/6650_5e8e05a8e7a727638c7562cf8630765f.png "1704009050484.png")
+![1704009050484.png](Resourse/6650_5e8e05a8e7a727638c7562cf8630765f.png "1704009050484.png")
 
-![1704009058632.png](https://attachment.bbstr.net/forum/2023/12/6651_7b30fec5a0bf7ffcf6012f9abd616cbe.png "1704009058632.png")
+![1704009058632.png](Resourse/6651_7b30fec5a0bf7ffcf6012f9abd616cbe.png "1704009058632.png")
 
 ### **Player对象**​
 
@@ -498,7 +498,7 @@ Item[] dye = tplr.Loadouts[1].Dye;
 
 ### 1.编写指令/dead，执行后返回当前死亡玩家列表\(绿色成功消息\)​
 
-![1704012547985.png](https://attachment.bbstr.net/forum/2023/12/6656_d571440d3a3b0520e36566e778acae7c.png "1704012547985.png")
+![1704012547985.png](Resourse/6656_d571440d3a3b0520e36566e778acae7c.png "1704012547985.png")
 
   
 <details>
@@ -568,7 +568,7 @@ namespace Plugin
 
 ### 2.编写指令"/看看你 \{玩家名\} ",执行后返回玩家的 生命/生命最大值\(魔力无加成最大值\)、魔力/魔力最大值\(魔力无加成最大值\)、玩家的难度\(旅行、软、中、硬核\)、幸运值luck\(绿色成功消息\)​
 
-![1704012556825.png](https://attachment.bbstr.net/forum/2023/12/6657_2b805c780258d59ba8fa8a7b81cddb4b.png "1704012556825.png")
+![1704012556825.png](Resourse/6657_2b805c780258d59ba8fa8a7b81cddb4b.png "1704012556825.png")
 
   
 <details>
@@ -677,7 +677,7 @@ namespace Plugin
 
 ### 3.编写指令"/看看你的 \{玩家名\} ",执行后返回玩家猪猪储蓄罐的钱币详情​
 
-![1704013371999.png](https://attachment.bbstr.net/forum/2023/12/6658_bd45d438d93e57664d2d7edb8448ffdd.png "1704013371999.png")
+![1704013371999.png](Resourse/6658_bd45d438d93e57664d2d7edb8448ffdd.png "1704013371999.png")
 
 <details>
 <summary>参考答案</summary>

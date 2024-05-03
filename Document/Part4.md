@@ -125,22 +125,22 @@ protected override void Dispose(bool disposing)
 回调函数是触发钩子时执行的函数，创建方法类似命令的回调函数  
 1.右键函数名字\(自己起名字\)  
 
-![1693893972437.png](https://attachment.bbstr.net/forum/2023/09/6571_8cdc4616e20116a85b7975b67facea98.png "1693893972437.png")
+![1693893972437.png](Resourse/6571_8cdc4616e20116a85b7975b67facea98.png "1693893972437.png")
 
   
 2.点击快速操作和重构...  
 
-![1693894022677.png](https://attachment.bbstr.net/forum/2023/09/6573_fed49637086fe23261756543dcef9906.png "1693894022677.png")
+![1693894022677.png](Resourse/6573_fed49637086fe23261756543dcef9906.png "1693894022677.png")
 
   
 3.点击生成方法  
 
-![1693894017431.png](https://attachment.bbstr.net/forum/2023/09/6572_f6e81b705edd32999fa2f5c2e9c14c65.png "1693894017431.png")
+![1693894017431.png](Resourse/6572_f6e81b705edd32999fa2f5c2e9c14c65.png "1693894017431.png")
 
   
 4.然后就会发现Visual Studio自动生成了一个回调函数，你需要自行编写函数的逻辑  
 
-![1693894123354.png](https://attachment.bbstr.net/forum/2023/09/6574_ae7d2cded4bc1edd92401a03b36334f4.png "1693894123354.png")
+![1693894123354.png](Resourse/6574_ae7d2cded4bc1edd92401a03b36334f4.png "1693894123354.png")
 
 
 ### **常用钩子**​
@@ -354,9 +354,9 @@ ServerApi.Hooks.GameInitialize.Register(this,(args) => { Console.WriteLine("触�
 ServerApi.Hooks.GamePostInitialize.Register(this,(args) => { Console.WriteLine("触发GamePostInitialize"); });
 ```
 
-![1697341632062.png](https://attachment.bbstr.net/forum/2023/10/6580_7f71773250c81c71e75418ad931d775c.png "1697341632062.png")
+![1697341632062.png](Resourse/6580_7f71773250c81c71e75418ad931d775c.png "1697341632062.png")
 
-![1697341669111.png](https://attachment.bbstr.net/forum/2023/10/6582_eb627fbcafdd404cf76b8bbf9d05e5c3.png "1697341669111.png")
+![1697341669111.png](Resourse/6582_eb627fbcafdd404cf76b8bbf9d05e5c3.png "1697341669111.png")
 
   
 
