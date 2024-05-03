@@ -99,12 +99,14 @@ public override Version Version => new Version(1, 0, 0, 0);
 
 <details>
   <summary>修改程序集版本</summary>
-    1. 右键解决方案资源管理器中的项目\(这里是HelloWorld\),然后点击属性  
-    <img src="Resourse/6521_17b2fe13121894c2606b5672953c284f.png" alt="图片描述">
-    <img src="Resourse/6522_163749ccba0554c69e60e62fa4e3d10f.png" alt="图片描述">
-    2. 在属性选项卡中依次找到包—常规—程序集版本  
-    <img src="Resourse/6524_2ef29be4606e5e50751e678d992fb50d.png" alt="图片描述">
-    3. 修改程序集版本即可
+      <ol>
+        <li>右键解决方案资源管理器中的项目\(这里是HelloWorld\),然后点击属性<br>
+        <img src="Resourse/6521_17b2fe13121894c2606b5672953c284f.png" alt="图片描述"><br>
+        <img src="Resourse/6522_163749ccba0554c69e60e62fa4e3d10f.png" alt="图片描述"><br>
+        <li>在属性选项卡中依次找到包—常规—程序集版本  <br>
+        <img src="Resourse/6524_2ef29be4606e5e50751e678d992fb50d.png" alt="图片描述"><br>
+        <li>修改程序集版本即可
+      </ol>
 </details>
 
 
@@ -135,19 +137,23 @@ public Plugin(Main game) : base(game)
 
 <details>
   <summary>Order例子</summary>
-    1. 编写两个插件，在执行构造函数和初始化函数执行时打印文本<br>
+  <ol>
+    <li> 编写两个插件，在执行构造函数和初始化函数执行时打印文本<br>
     <img src="Resourse/6530_f7178dea684e463a3906bc89a05dba11.png" alt="图片描述"><br>
-    2. 重命名并安装插件<br>
-        <li>当Order为1的插件在文件夹中更靠前时\(以文件名排序\)，Order为1的插件的构造函数将会先被执行<br>
-        <img src="Resourse/6533_cc0bdd48046b7012e10c0228eef0ef06.png" alt="图片描述"><br>
-        <img src="Resourse/6534_783aedca561256565fae29db0fba1976.png" alt="图片描述"><br>
-        <li>相反，当Order为2的插件在文件夹中更靠前时\(以文件名排序\)，Order为2的插件的构造函数将会先被执行  <br>
-        <img src="Resourse/6531_0dc2b5f224e085f63b4aeafb500d8242.png" alt="图片描述"><br>
-        <img src="Resourse/6532_81e71b3644e9c1ecc16d404da47c02c3.png" alt="图片描述"><br>
-        <li>所以，插件构造函数的执行顺序取决于插件的文件名，与Order无关  <br>
-        <li>但是无论文件名如何修改，Order为1的插件总会先初始化，如下图:  <br>
-        <img src="Resourse/6535_644e3b83b2095ffdd4efb6fb7cd0a8a1.png" alt="图片描述"><br>
-        <li>所以，插件初始化函数的执行顺序取决于Order，与插件的文件名无关
+    <li> 重命名并安装插件<br>
+        <ul>
+            <li>当Order为1的插件在文件夹中更靠前时\(以文件名排序\)，Order为1的插件的构造函数将会先被执行<br>
+            <img src="Resourse/6533_cc0bdd48046b7012e10c0228eef0ef06.png" alt="图片描述"><br>
+            <img src="Resourse/6534_783aedca561256565fae29db0fba1976.png" alt="图片描述"><br>
+            <li>相反，当Order为2的插件在文件夹中更靠前时\(以文件名排序\)，Order为2的插件的构造函数将会先被执行  <br>
+            <img src="Resourse/6531_0dc2b5f224e085f63b4aeafb500d8242.png" alt="图片描述"><br>
+            <img src="Resourse/6532_81e71b3644e9c1ecc16d404da47c02c3.png" alt="图片描述"><br>
+            <li>所以，插件构造函数的执行顺序取决于插件的文件名，与Order无关  <br>
+            <li>但是无论文件名如何修改，Order为1的插件总会先初始化，如下图:  <br>
+            <img src="Resourse/6535_644e3b83b2095ffdd4efb6fb7cd0a8a1.png" alt="图片描述"><br>
+            <li>所以，插件初始化函数的执行顺序取决于Order，与插件的文件名无关
+        </ul>
+    </ol>
 </details>
 
 
