@@ -4,7 +4,7 @@
 
 - 如何在TShock插件中添加新命令
 - 学会处理CommandArgs参数
-- 学会卸载插件添加的命令~~\(养成好习惯\)~~
+- 学会卸载插件添加的命令
 
 ### 1.添加新的命令​
 
@@ -305,11 +305,10 @@ args.Player.Teleport(1, 1); //传送玩家到坐标(X,Y)
 args.Player.Disconnect("这是一个断开信息"); //断开玩家的连接(断开理由)(也算是踢出玩家的一种)
 ```
 
-~~将会在未来的几个Part更详细地讲解TSplayer\(画大饼\)~~
 
 #### TPlayer​
 
-Player对象，即Terraria原版玩家对象，~~过于硬核~~，此处不讲解  
+Player对象，即Terraria原版玩家对象，此处不讲解  
 
 #### Silent​
 
@@ -321,7 +320,7 @@ Player对象，即Terraria原版玩家对象，~~过于硬核~~，此处不讲�
 #### Message​
 
 原消息，例如：你执行了/kick Cai 傻逼，那么Message的值就是"kick Cai 傻逼"  
-由于Parameters的存在，~~这个东西就基本上没啥卵用~~  
+由于Parameters的存在
   
 
 ### 5.卸载你添加的命令​

@@ -45,7 +45,7 @@ WTF\?
 
 ### 发送数据包\(SendData\)的参数:​
 
-这里有一个~~奇怪的误区~~，SendData的参数并不一定是写进数据包的值\(上面例子中:参数1是player.Index而不是TPlayer.statLifeMax\)，对于不同的数据包SendData的参数也会有所不同。想要知道具体参数作用，我们需要反编译NetMessage.orig\_SendData，方法就是直接在可以执行语句的地方打一个NetMessage.orig\_SendData，然后右键orig\_SendData，点击转到定义,等待一下反编译我们就能看到NetMessage.orig\_SendData的代码了  
+这里有一个奇怪的误区，SendData的参数并不一定是写进数据包的值\(上面例子中:参数1是player.Index而不是TPlayer.statLifeMax\)，对于不同的数据包SendData的参数也会有所不同。想要知道具体参数作用，我们需要反编译NetMessage.orig\_SendData，方法就是直接在可以执行语句的地方打一个NetMessage.orig\_SendData，然后右键orig\_SendData，点击转到定义,等待一下反编译我们就能看到NetMessage.orig\_SendData的代码了  
 
 ![1708706875142.png](Resourse/6704_13e87dfe295685f2e0fe714dd4892f00.png "1708706875142.png")
 

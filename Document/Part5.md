@@ -175,7 +175,7 @@ else
 | AcceptingWhispers | bool | 玩家是否接受耳语\(私聊\) \(/w\) |
 | ActiveChest | int | 玩家当前打开的箱子ID \(玩家没有开箱子则未-1\) |
 | AwaitingResponse | Dictionary\<string, Action\<object>> | 玩家等待特定命令的响应的列表\(\?\) |
-| ~~Confused~~ | bool | 玩家是否处于控制左右颠倒\(已失效\) |
+| Confused | bool | 玩家是否处于控制左右颠倒\(已失效\) |
 | Country | string | 玩家的国家代码\(需要在Config开启EnableGeoIP\)\(无数据N/A, 代理A1\) |
 | CurrentRegion | Region | 玩家当前所处的区域 |
 | Dead | bool | 玩家是否处于死亡状态 |
@@ -208,7 +208,7 @@ else
 | SilentKickInProgress | bool | 玩家是否静默踢出服务器\(不发送玩家踢出服务器的提示\) |
 | sX | int | 玩家出生点的X坐标 |
 | sY | int | 玩家出生点的Y坐标 |
-| ~~TeleportCoords~~ | Vector2 | 不明，在TShock已弃用 |
+| TeleportCoords | Vector2 | 不明，在TShock已弃用 |
 | tempGroup | Group | 玩家当前的临时组\(会覆盖原来的组\) |
 | tempGroupTimer | Timer | 玩家临时组有效期的计时器 |
 | TempPoints | Point\[2\] | 玩家设置的区域临时点 |
@@ -246,6 +246,6 @@ else
 | Spawn | int tilex, int tiley, PlayerSpawnContext context, int\? respawnTimer = null, short\? numberOfDeathsPVE = null, short\? numberOfDeathsPVP = null | void | 复活玩家，大部分参数无效，不做解释 |
 | Teleport | float x\(X坐标\), float y\(Y坐标\), byte style = 1\(TP类型\[不做解释\]\) | void | 将玩家传送到某一位置 |
 | Whoopie | object time\(其实是个int，单位:秒\) | void | 发出烦人的声音 需要另开线程使用，否则会卡死主线程 |
-| ~~TempGroupTimerElapsed~~ | 不做解释 | 不做解释 | 不应该被Pubic的内部方法 |
+| TempGroupTimerElapsed | 不做解释 | 不做解释 | 不应该被Pubic的内部方法 |
 
 *部分方法例如:SendDate另做介绍
