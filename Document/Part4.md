@@ -1,17 +1,17 @@
-## Part 4.挂钩钩\~
+# Part 4.挂钩钩\~
 
 本章你将学到：  
 
 - 学习如何注册、卸载钩子
 - 学会使用常用钩子修改游戏事件
 
-### 钩子可以干啥？
+## 钩子可以干啥？
 
-当你注册一个事件的钩子后，在触发这个事件时，钩子就会执行你预先设置的函数\(回调函数\)  
+- 当你注册一个事件的钩子后，在触发这个事件时，钩子就会执行你预先设置的函数\(回调函数\)  
 
-### 举个例子：
+## 举个例子：
 
-假如你需要实现当玩家说脏话时把他踢出去，那么你就可以注册一个ServerChat钩子，并且调用OnChat函数。你需要在OnChat函数中编写代码，识别玩家是不是真的说了脏话。最后别忘了卸载你的钩子
+- 假如你需要实现当玩家说脏话时把他踢出去，那么你就可以注册一个ServerChat钩子，并且调用OnChat函数。你需要在OnChat函数中编写代码，识别玩家是不是真的说了脏话。最后别忘了卸载你的钩子
 
 
 
@@ -85,9 +85,9 @@ namespace Plugin
 
 
 
-### 代码解析：
+## 代码解析：
 
-•注册钩子语句  
+- 注册钩子语句  
 不同类型的钩子有不同的注册语句，  
 ServerApi.Hooks.ServerChat.Register\(this, _OnChat_\); 就是ServerApi钩子的注册语句，钩子要在使用前注册\(一般在Initialize注册\)  
 绿字部分是钩子的名字\(一般和其功能有关\)，划线部分是其回调函数\(触发钩子执行的函数\)，其他照写就好  
@@ -102,10 +102,10 @@ public override void Initialize()
 }
 ```
 
-•卸载钩子语句  
-不同类型的钩子有不同的卸载语句，  
-ServerApi.Hooks.ServerChat.Deregister\(this, _OnChat_\); 就是ServerApi钩子的卸载语句，钩子要在不需要使用时卸载\(一般在Dispose卸载\)  
-绿字部分是钩子的名字\(一般和其功能有关\)，划线部分是其回调函数\(和注册钩子的函数名一样\)，值得注意的是卸载函数是Deregister\(\)而不是注册时的Register\(\)  
+- 卸载钩子语句
+1. 不同类型的钩子有不同的卸载语句
+2. ServerApi.Hooks.ServerChat.Deregister\(this, _OnChat_\); 就是ServerApi钩子的卸载语句，钩子要在不需要使用时卸载\(一般在Dispose卸载\)  
+3. 绿字部分是钩子的名字\(一般和其功能有关\)，划线部分是其回调函数\(和注册钩子的函数名一样\)，值得注意的是卸载函数是Deregister\(\)而不是注册时的Register\(\)  
 
 
 
@@ -121,32 +121,33 @@ protected override void Dispose(bool disposing)
 }
 ```
 
-•回调函数  
-回调函数是触发钩子时执行的函数，创建方法类似命令的回调函数  
-1.右键函数名字\(自己起名字\)  
+- 回调函数  
+>回调函数是触发钩子时执行的函数，创建方法类似命令的回调函数  
+
+1. 右键函数名字\(自己起名字\)  
 
 ![1693893972437.png](Resourse/6571_8cdc4616e20116a85b7975b67facea98.png "1693893972437.png")
 
   
-2.点击快速操作和重构...  
+2. 点击快速操作和重构...  
 
 ![1693894022677.png](Resourse/6573_fed49637086fe23261756543dcef9906.png "1693894022677.png")
 
   
-3.点击生成方法  
+3. 点击生成方法  
 
 ![1693894017431.png](Resourse/6572_f6e81b705edd32999fa2f5c2e9c14c65.png "1693894017431.png")
 
   
-4.然后就会发现Visual Studio自动生成了一个回调函数，你需要自行编写函数的逻辑  
+4. 然后就会发现Visual Studio自动生成了一个回调函数，你需要自行编写函数的逻辑  
 
 ![1693894123354.png](Resourse/6574_ae7d2cded4bc1edd92401a03b36334f4.png "1693894123354.png")
 
 
-### 常用钩子​
+## 常用钩子​
 
-•ServerApi钩子  
-ServerApi的钩子覆盖了服务器大部分可能需要挂钩的事件，同时值得注意的是ServerApi钩子中参数的命名和Terraria原版相似  
+- ServerApi钩子  
+> ServerApi的钩子覆盖了服务器大部分可能需要挂钩的事件，同时值得注意的是ServerApi钩子中参数的命名和Terraria原版相似  
 
 
 
@@ -172,7 +173,7 @@ protected override void Dispose(bool disposing)
 }
 ```
 
-其中args参数中是不包含TSPlayer对象或Player对象的，所以你需要手动获取，方法如下:  
+- 其中args参数中是不包含TSPlayer对象或Player对象的，所以你需要手动获取，方法如下:  
 
 
 
@@ -229,8 +230,8 @@ protected override void Dispose(bool disposing)
 ```
 
   
-•GetDataHandlers数据包钩子  
-服务器会收到客户端发送的数据包，而GetDataHandlers钩子会解析这些数据包，触发对应的数据包钩子，并且打包成参数传入回调函数，但是GetDataHandlers并不包含所有数据包。  
+- GetDataHandlers数据包钩子  
+> 服务器会收到客户端发送的数据包，而GetDataHandlers钩子会解析这些数据包，触发对应的数据包钩子，并且打包成参数传入回调函数，但是GetDataHandlers并不包含所有数据包。  
 
 
 
@@ -264,12 +265,12 @@ protected override void Dispose(bool disposing)
 > 注：args.Handled可以标记这个事件是否已经处理，如果将其设为true服务器可能会忽略这个事件
 
 
-除此之外，还有On钩子和IL钩子，将在以后填坑...
+- 除此之外，还有On钩子和IL钩子，将在以后填坑...
 
-### 钩子练习题​
+## 钩子练习题​
 
 1\. 使用ServerApi钩子实现，在玩家加入服务器时\(ServerJoin,ServerLeave\)广播"欢迎玩家XXX加入服务器\!"，在玩家离开服务器时广播"玩家XXX离开服务器\!"  
-提示: 可以使用如下语句获取TShock玩家对象  
+> 提示: 可以使用如下语句获取TShock玩家对象  
 
 
 
@@ -343,9 +344,9 @@ TSPlayer plr = TShock.Players[args.Who]; //获取TShock玩家对象，args.Who�
 
 
 
-2\. 使用ServerApi钩子实现，在服务器加载完成后\(GamePostInitialize\)在控制台打印"服务器已经加载完啦\!"  
-GameInitialize和GamePostInitialize的区别：  
-他们都是游戏初始化钩子，但是GameInitialize是开始初始化时触发，而GamePostInitialize是完成初始化时触发\(即地图加载完毕，服务器处于可加入状态\)  
+2\. 使用ServerApi钩子实现，在服务器加载完成后(GamePostInitialize)在控制台打印"服务器已经加载完啦!"  
+>提示: GameInitialize和GamePostInitialize的区别：  
+ 他们都是游戏初始化钩子，但是GameInitialize是开始初始化时触发，而GamePostInitialize是完成初始化时触发(即地图加载完毕，服务器处于可加入状态)  
 
 
 
@@ -418,7 +419,7 @@ namespace Plugin
 
 
 
-3\. 使用TShockAPI钩子实现，在玩家完成登录后\(PlayerHooks.PlayerPostLogin\) 给玩家发送"您登录的IP是：xxx.xxx.xxx.xxx"  
+3\. 使用TShockAPI钩子实现，在玩家完成登录后(PlayerHooks.PlayerPostLogin) 给玩家发送"您登录的IP是：xxx.xxx.xxx.xxx"  
 提示: 可以使用如下语句获取玩家IP  
 
 
@@ -488,7 +489,7 @@ namespace Plugin
 
 
 4\. 使用TShockAPI钩子实现，在服务器使用/reload命令\(GeneralHooks.ReloadEvent\)后显示"服务器正在重载\!"  
-重点: Reload钩子非常重要，可以让你用/reload统一重载插件  
+> 重点: Reload钩子非常重要，可以让你用/reload统一重载插件  
 
 <details>
 <summary>参考答案</summary>
@@ -640,14 +641,14 @@ TShock.Log.ConsoleError("错误Log，会打印在控制台上哦");
 TShock.Log.ConsoleDebug("调试Log，会打印在控制台上哦，要在Config打开Debug才会生效哦");
 ```
 
-提示2: 用以下代码获取玩家想要切换的PVP状态  
+> 提示2: 用以下代码获取玩家想要切换的PVP状态  
 
 
 ```csharp
 bool pvp = e.Pvp //切换前状态为!e.pvp
 ```
 
-提示3: 用以下代码切换PVP模式  
+> 提示3: 用以下代码切换PVP模式  
 
 
 
