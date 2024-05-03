@@ -12,9 +12,6 @@
 
 ![1692965150135.png](https://attachment.bbstr.net/forum/2023/08/6471_1ebf065ce18f856eee0487e85496500d.png "1692965150135.png")
 
-  
-  
-
 ### **2.打开VisualStudioSetup.exe**​
 
 点击继续即可，然后会开始安装**VisualStudio**安装器  
