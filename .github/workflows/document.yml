@@ -3,7 +3,8 @@ name: Document
 on:
   push:
     branches: ["main","master","cai" ]
-    
+  pull_request:
+    branches: ["main","master","cai" ]
 jobs:
   Build:
     runs-on: ubuntu-latest
