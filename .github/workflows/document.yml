@@ -2,7 +2,7 @@ name: Document
 
 on:
   push:
-    branches: [ "master","cai" ]
+    branches: ["main","master","cai" ]
     
 jobs:
   Build:
@@ -36,13 +36,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Doc
-          path: TShock插件编写从入门到跑路.md
+          path: TShock插件编写从入门到跑路.pdf
 
       - name: Prepare Release Files
         uses: actions/upload-artifact@v4
         with:
           name: Doc
-          path: TShock插件编写从入门到跑路.md
+          path: TShock插件编写从入门到跑路.pdf
           
   LatestRelease:
     name: Latest Release
@@ -88,7 +88,7 @@ jobs:
           name: "Latest Version"
           body: "🥳这里是文档的PDF发布，你可以在这里下载整份教程。\n${{steps.external_changelog_second.outputs.changelog}}"
           artifacts: |
-            TShock插件编写从入门到跑路.md
+            TShock插件编写从入门到跑路.pdf
           allowUpdates: true
           removeArtifacts: true
           
