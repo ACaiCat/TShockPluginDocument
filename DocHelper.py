@@ -8,7 +8,7 @@ import urllib.request
 
 
 def md_to_pdf(file_name):
-    os.system(f"pandoc --pdf-engine=xelatex  -V mainfont=LXGWWenKaiMono-Regular.ttf -V geometry:margin=0.5in --template eisvogel.tex  {file_name} -o {file_name.replace('.md', '.pdf')}")
+    os.system(f"pandoc --pdf-engine=xelatex  -V mainfont=LXGWWenKaiMono-Regular.ttf -V geometry:margin=0.5in geometry:b5paper --template eisvogel.tex  {file_name} -o {file_name.replace('.md', '.pdf')}")
 
 if __name__ == '__main__':
     print(f"🚀 开始执行打包脚本...(By Cai 😋)")
