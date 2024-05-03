@@ -103,7 +103,7 @@ jobs:
     permissions:
       actions: write
     steps:
-      - uses: geekyeggo/delete-artifact@v2
+      - uses: geekyeggo/delete-artifact@v5
         with:
           name: |
             Plugins
