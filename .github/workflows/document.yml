@@ -1,0 +1,109 @@
+name: NET
+
+on:
+  push:
+    branches: [ "master","cai" ]
+    
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Initialize Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+          
+      - name: Install Pandoc
+        run: 
+          sudo apt-get install pandoc
+        env:
+          PYTHONIOENCODING: 'utf-8'
+        
+      - name: Install TeX Live
+        run: |
+          sudo apt-get install -y texlive-xetex
+
+      - name: Package
+        run: 
+          sudo python DocHelper.py
+        env:
+          PYTHONIOENCODING: 'utf-8'
+      
+      - name: Temporary Upload Doc
+        uses: actions/upload-artifact@v3
+        with:
+          name: Doc
+          path: TShock插件编写从入门到跑路.md
+
+      - name: Prepare Release Files
+        uses: actions/upload-artifact@v3
+        with:
+          name: Doc
+          path: TShock插件编写从入门到跑路.md
+          
+  LatestRelease:
+    name: Latest Release
+    runs-on: ubuntu-latest
+    needs: Build
+    permissions:
+         contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Get Changelog
+        id: external_changelog_second
+        uses: mikepenz/release-changelog-builder-action@v4
+        with:
+          configuration: "Config/Config_Rep.json"
+            #cache: ${{ steps.external_changelog_collect.outputs.cache }}
+      - name: Echo External Repo Configuration Changelog
+        env:
+          CHANGELOG: ${{ steps.external_changelog_second.outputs.changelog }}
+          CHANGELOG_SECOND: ${{ steps.external_changelog_second.outputs.changelog }}
+        run: |
+          echo ${{ steps.external_changelog_collect.outputs.cache }}
+          echo "First:"
+          echo "$CHANGELOG"
+
+          echo "Second:"
+          echo "$CHANGELOG_SECOND"
+          
+      - name: Update Tag
+        run: |
+          git tag -f V1.0.0.0
+          git push -f origin V1.0.0.0
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: Doc
+          path: ./
+      - name: Update Latest Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: V1.0.0.0
+          name: "Latest Version"
+          body: "🥳这里是文档的PDF发布，你可以在这里下载整份教程。\n${{steps.external_changelog_second.outputs.changelog}}"
+          artifacts: |
+            TShock插件编写从入门到跑路.md
+          allowUpdates: true
+          removeArtifacts: true
+          
+      
+         
+  ClearTempArtifacts:
+    name: Clear Temp Artifacts
+    if: always()
+    runs-on: ubuntu-latest
+    needs:
+      - LatestRelease
+    permissions:
+      actions: write
+    steps:
+      - uses: geekyeggo/delete-artifact@v2
+        with:
+          name: |
+            Plugins
