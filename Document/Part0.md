@@ -1,22 +1,22 @@
-## Part 0.配置开发环境​
+# Part 0.配置开发环境​
 
 本章你将学到：  
 
-* 如何安装Microsoft Visual Studio
+- 如何安装Microsoft Visual Studio
 
-### 1.下载Microsoft Visual Studio安装程序​
+## 1.下载Microsoft Visual Studio安装程序​
 
-进入Visual Studio官方下载地址: <https://visualstudio.microsoft.com/zh-hans/downloads/>  
-选择Community版本下载\(Professional、Enterprise版是付费版本\)  
+1. 进入Visual Studio官方下载地址: <https://visualstudio.microsoft.com/zh-hans/downloads/>  
+2. 选择Community版本下载\(Professional、Enterprise版是付费版本\)  
   
 
 ![1692965150135.png](Resourse/6471_1ebf065ce18f856eee0487e85496500d.png "1692965150135.png")
 
-### 2.打开VisualStudioSetup.exe​
+## 2.打开VisualStudioSetup.exe​
 
-点击继续即可，然后会开始安装VisualStudio安装器  
+- 点击继续即可，然后会开始安装VisualStudio安装器  
 
-### 3.选择.NET 桌面开发并安装​
+## 3.选择.NET 桌面开发并安装​
 
 ![1692966114824.png](Resourse/6474_39400d8a242d19563d0e25b023464415.png "1692966114824.png")
 
@@ -24,17 +24,16 @@
 
   
 
-### 4.等待安装​
+## 4.等待安装​
 
 ![1692966713652.png](Resourse/6475_f80dc35acf469e8d4dd612963338c317.png "1692966713652.png")
 
 > 注：若提示需要重启，重启即可
 
-### 5.启动VisualStudio
+## 5.启动VisualStudio
 
-VisualStudio一般会出现在开始菜单下，你可以使用如下方法创建快捷方式\(如果没有快捷方式\)  
-
+- VisualStudio一般会出现在开始菜单下，你可以使用如下方法创建快捷方式\(如果没有快捷方式\)  
+- 初次启动可能会要求登录，登录完成后可以选择自定义主题，按照自己的偏好选择即可
 ![1692967698634.png](Resourse/6476_9620982f91a831420e1f690259f1bb40.png "1692967698634.png")
   
-初次启动可能会要求登录，登录完成后可以选择自定义主题，按照自己的偏好选择即可  
-至此，VisualStudio安装教程结束
+
