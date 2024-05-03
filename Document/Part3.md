@@ -1,12 +1,12 @@
-## **Part 3.添加新命令**​
+## Part 3.添加新命令​
 
-**本章你将学到：**  
+本章你将学到：  
 
-- **如何在TShock插件中添加新命令**
-- ****学会处理CommandArgs参数****
-- ****学会卸载插件添加的命令****~~\(养成好习惯\)~~
+- 如何在TShock插件中添加新命令
+- 学会处理CommandArgs参数
+- 学会卸载插件添加的命令~~\(养成好习惯\)~~
 
-### **1.添加新的命令**​
+### 1.添加新的命令​
 
 在Part 1中有提到，添加命令通常是在插件的初始化函数Initialize\(\)中添加的
 添加新命令的常用格式是这样的:  
@@ -45,7 +45,7 @@ public override void Initialize()
   
 当然，此时这个函数没有任何功能，我们删去throw new NotImplementedException\(\);就可以开始编写命令功能了  
 
-### **2.命令的权限**​
+### 2.命令的权限​
 
 
 
@@ -69,7 +69,7 @@ private void Cmd(CommandArgs args)
 ![1693039745182.png](Resourse/6565_8e0ca1a530b0f77207513a5c2c08591b.png "1693039745182.png")
 
   
-权限也可以设为无或者多个权限，**如下代码可以添加3条分别为/cmd1\(无权限\)、/cmd2\(单权限\)、/cmd3\(多权限\)的命令**  
+权限也可以设为无或者多个权限，如下代码可以添加3条分别为/cmd1\(无权限\)、/cmd2\(单权限\)、/cmd3\(多权限\)的命令  
 
 
 
@@ -92,7 +92,7 @@ public override void Initialize()
 通常插件权限名字格式应为: 插件名.功能名\(例如: si.use\)  
 当然为了方便分类也可以使用: 插件名.功能.功能细分 \(例如: uban.playerban.admin\)  
 
-### **3.命令的别名**​
+### 3.命令的别名​
 
 有时候一个命令可以由两个名字对应，例如：/off和/exit他们属于同一个命令，/exit就是/off的别名  
 我们可以通过下面的代码实现命令别名  
@@ -129,7 +129,7 @@ public override void Initialize()
 
 ![1693035434275.png](Resourse/6557_70095bfacb55c765abda613730e957cd.png "1693035434275.png")
 
-### **4.命令的其他属性**​
+### 4.命令的其他属性​
 
 TShock的命令还有4个属性，这些属性是AllowServer、DoLog、HelpDesc、HelpText，你可以使用new Command\(\)\{ 属性 = 值 \}来修改他们，也可以用如下方法一次修改多个属性  
 
@@ -166,9 +166,9 @@ HelpDesc的默认值为null，HelpText的默认值为No help available.\(在当�
 但是HelpDesc的优先级会更高，当命令的HelpDesc不为null时只会显示HelpDesc  
 
 ![1693034557221.png](Resourse/6556_6607929faf39150ab769432b5d1c0810.png "1693034557221.png")
-### **5.CommandArgs参数**​
+### 5.CommandArgs参数​
 
-**当玩家执行我们添加的命令时，服务器会把一些相关的信息"打包"传给我们的回调函数，这些信息就是CommandArgs  
+当玩家执行我们添加的命令时，服务器会把一些相关的信息"打包"传给我们的回调函数，这些信息就是CommandArgs  
 
 ![1693039291623.png](Resourse/6561_c9c245aadefc2a6c8156d03fd3549776.png "1693039291623.png")
 
@@ -178,11 +178,11 @@ HelpDesc的默认值为null，HelpText的默认值为No help available.\(在当�
 ![1693039336869.png](Resourse/6562_b64bc64c512db4b5338b2f6030ba72e1.png "1693039336869.png")
 
 
-#### **Parameters**​
+#### Parameters​
 
-**当你输入含有参数的命令时，TShock会把命令分割成Parameters**  
+当你输入含有参数的命令时，TShock会把命令分割成Parameters  
 
-#### **Parameters是命令的参数，类型为字符串列表**​
+#### Parameters是命令的参数，类型为字符串列表​
 
 
 
@@ -283,7 +283,7 @@ private void CommandHandler(CommandArgs args)
 
 
 
-#### **Player**​
+#### Player​
 
 执行命令的玩家的TSPlayer对象，通常可以对其进行以下操作：  
 
@@ -307,26 +307,26 @@ args.Player.Disconnect("这是一个断开信息"); //断开玩家的连接(断�
 
 ~~将会在未来的几个Part更详细地讲解TSplayer\(画大饼\)~~
 
-#### **TPlayer**​
+#### TPlayer​
 
-**Player对象，即Terraria原版玩家对象，~~过于硬核~~，此处不讲解**  
+Player对象，即Terraria原版玩家对象，~~过于硬核~~，此处不讲解  
 
-#### **Silent**​
+#### Silent​
 
-**是否为静默执行，  
+是否为静默执行，  
 当玩家使用CommandSpecifier\(默认为/\)为命令起始符时Silent为false  
 当玩家使用CommandSilentSpecifier\(默认为.\)为命令起始符时Silent为true  
-静默执行取决于命令是否写了静默执行的逻辑，如果没有，那么静默执行和正常执行没有任何区别**  
+静默执行取决于命令是否写了静默执行的逻辑，如果没有，那么静默执行和正常执行没有任何区别  
 
-#### **Message**​
+#### Message​
 
-**原消息，例如：你执行了/kick Cai 傻逼，那么Message的值就是"kick Cai 傻逼"  
-由于Parameters的存在，~~这个东西就基本上没啥卵用~~**  
+原消息，例如：你执行了/kick Cai 傻逼，那么Message的值就是"kick Cai 傻逼"  
+由于Parameters的存在，~~这个东西就基本上没啥卵用~~  
   
 
-### **5.卸载你添加的命令**​
+### 5.卸载你添加的命令​
 
-**使用下面的代码就可以卸载本插件添加的**所有**命令**  
+使用下面的代码就可以卸载本插件添加的所有命令  
 
 
 

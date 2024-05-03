@@ -1,13 +1,13 @@
 ## Part 4.挂钩钩\~
 
-**本章你将学到：**  
+本章你将学到：  
 
-- ****学习如何注册、卸载钩子****
-- ****学会使用常用钩子修改游戏事件****
+- 学习如何注册、卸载钩子
+- 学会使用常用钩子修改游戏事件
 
 ### 钩子可以干啥？
 
-**当你注册一个事件的钩子后，在触发这个事件时，钩子就会执行你预先设置的函数\(回调函数\)**  
+当你注册一个事件的钩子后，在触发这个事件时，钩子就会执行你预先设置的函数\(回调函数\)  
 
 ### 举个例子：
 
@@ -143,7 +143,7 @@ protected override void Dispose(bool disposing)
 ![1693894123354.png](Resourse/6574_ae7d2cded4bc1edd92401a03b36334f4.png "1693894123354.png")
 
 
-### **常用钩子**​
+### 常用钩子​
 
 •ServerApi钩子  
 ServerApi的钩子覆盖了服务器大部分可能需要挂钩的事件，同时值得注意的是ServerApi钩子中参数的命名和Terraria原版相似  
@@ -188,10 +188,10 @@ private void OnChat(ServerChatEventArgs args)
 ```
 
 
-> **注：args.Handled可以标记这个事件是否已经处理，如果将其设为true服务器可能会忽略这个事件**
+> 注：args.Handled可以标记这个事件是否已经处理，如果将其设为true服务器可能会忽略这个事件
 
-**•TShockAPI钩子  
-这些钩子主要挂钩了TShock中的事件，例如：新建账号、玩家进入区域等，TShockAPI钩子分为如下几类:**  
+•TShockAPI钩子  
+这些钩子主要挂钩了TShock中的事件，例如：新建账号、玩家进入区域等，TShockAPI钩子分为如下几类:  
 
  类型 | 包含钩子 
 -------|----------
@@ -261,15 +261,15 @@ protected override void Dispose(bool disposing)
 
 
 
-> **注：args.Handled可以标记这个事件是否已经处理，如果将其设为true服务器可能会忽略这个事件**
+> 注：args.Handled可以标记这个事件是否已经处理，如果将其设为true服务器可能会忽略这个事件
 
 
 除此之外，还有On钩子和IL钩子，将在以后填坑...
 
-### **钩子练习题**​
+### 钩子练习题​
 
-**1\. 使用ServerApi钩子实现，在玩家加入服务器时\(ServerJoin,ServerLeave\)广播"欢迎玩家XXX加入服务器\!"，在玩家离开服务器时广播"玩家XXX离开服务器\!"  
-提示: 可以使用如下语句获取TShock玩家对象**  
+1\. 使用ServerApi钩子实现，在玩家加入服务器时\(ServerJoin,ServerLeave\)广播"欢迎玩家XXX加入服务器\!"，在玩家离开服务器时广播"玩家XXX离开服务器\!"  
+提示: 可以使用如下语句获取TShock玩家对象  
 
 
 
@@ -343,9 +343,9 @@ TSPlayer plr = TShock.Players[args.Who]; //获取TShock玩家对象，args.Who�
 
 
 
-**2\. 使用ServerApi钩子实现，在服务器加载完成后\(GamePostInitialize\)在控制台打印"服务器已经加载完啦\!"  
+2\. 使用ServerApi钩子实现，在服务器加载完成后\(GamePostInitialize\)在控制台打印"服务器已经加载完啦\!"  
 GameInitialize和GamePostInitialize的区别：  
-他们都是游戏初始化钩子，但是**GameInitialize是开始初始化时触发，而**GamePostInitialize是完成初始化时触发\(即地图加载完毕，服务器处于可加入状态\)******  
+他们都是游戏初始化钩子，但是GameInitialize是开始初始化时触发，而GamePostInitialize是完成初始化时触发\(即地图加载完毕，服务器处于可加入状态\)  
 
 
 
@@ -418,8 +418,8 @@ namespace Plugin
 
 
 
-**3\. 使用TShockAPI钩子实现，在玩家完成登录后\(PlayerHooks.PlayerPostLogin\) 给玩家发送"您登录的IP是：xxx.xxx.xxx.xxx"  
-提示: 可以使用如下语句获取玩家IP**  
+3\. 使用TShockAPI钩子实现，在玩家完成登录后\(PlayerHooks.PlayerPostLogin\) 给玩家发送"您登录的IP是：xxx.xxx.xxx.xxx"  
+提示: 可以使用如下语句获取玩家IP  
 
 
 
@@ -487,8 +487,8 @@ namespace Plugin
 
 
 
-**4\. 使用TShockAPI钩子实现，在服务器使用/reload命令\(GeneralHooks.ReloadEvent\)后显示"服务器正在重载\!"  
-重点: Reload钩子非常重要，可以让你用/reload统一重载插件**  
+4\. 使用TShockAPI钩子实现，在服务器使用/reload命令\(GeneralHooks.ReloadEvent\)后显示"服务器正在重载\!"  
+重点: Reload钩子非常重要，可以让你用/reload统一重载插件  
 
 <details>
 <summary>参考答案</summary>
@@ -550,8 +550,8 @@ namespace Plugin
 ```
 </details>
 
-**5\. 使用GetDataHandlers实现，在玩家打开箱子时\(GetDataHandlers.ChestOpen\)广播"玩家XXX打开了箱子XXX位于\(X, Y\)"  
-提示: 用以下代码可以获取箱子对象**  
+5\. 使用GetDataHandlers实现，在玩家打开箱子时\(GetDataHandlers.ChestOpen\)广播"玩家XXX打开了箱子XXX位于\(X, Y\)"  
+提示: 用以下代码可以获取箱子对象  
 
 
 
@@ -622,8 +622,8 @@ namespace Plugin
 </details>
 
 
-**6\. 使用GetDataHandlers实现，在玩家切换PVP模式时\(GetDataHandlers.TogglePvp\)发送"本服务器禁止切换PVP模式",并记录日子"玩家XXX试图开启/关闭PVP",并且阻止玩家切换  
-提示1: 用以下代码可以记录日志**  
+6\. 使用GetDataHandlers实现，在玩家切换PVP模式时\(GetDataHandlers.TogglePvp\)发送"本服务器禁止切换PVP模式",并记录日子"玩家XXX试图开启/关闭PVP",并且阻止玩家切换  
+提示1: 用以下代码可以记录日志  
 
 
 
@@ -640,14 +640,14 @@ TShock.Log.ConsoleError("错误Log，会打印在控制台上哦");
 TShock.Log.ConsoleDebug("调试Log，会打印在控制台上哦，要在Config打开Debug才会生效哦");
 ```
 
-**提示2: 用以下代码获取玩家想要切换的PVP状态**  
+提示2: 用以下代码获取玩家想要切换的PVP状态  
 
 
 ```csharp
 bool pvp = e.Pvp //切换前状态为!e.pvp
 ```
 
-**提示3: 用以下代码切换PVP模式**  
+提示3: 用以下代码切换PVP模式  
 
 
 

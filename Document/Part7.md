@@ -1,21 +1,21 @@
-## **Part 6.发送数据包**​
+## Part 6.发送数据包​
 
-**本章你将学到：**  
+本章你将学到：  
 
-- ****如何向玩家发送数据包****
-- ****研究不同数据包参数的方法****
+- 如何向玩家发送数据包
+- 研究不同数据包参数的方法
 
-### **什么是数据包？**​
+### 什么是数据包？​
 
-### **顾名思义，数据包就是存放数据的包。这些包会告诉玩家的客户端一些游戏内的信息\(例如物品掉落、地图时间等\)，当然服务器也可以接受来自玩家的数据包**​
+### 顾名思义，数据包就是存放数据的包。这些包会告诉玩家的客户端一些游戏内的信息\(例如物品掉落、地图时间等\)，当然服务器也可以接受来自玩家的数据包​
 
-### **为什么要发送数据包？**​
+### 为什么要发送数据包？​
 
-**当你直接修改Terraria服务端中的属性、变量等\(例如：玩家最大血量、下雨等\)，你会发现你的修改没办法马上生效，这时候就需要向玩家发送一个数据包用来告诉客户端你修改的信息**  
+当你直接修改Terraria服务端中的属性、变量等\(例如：玩家最大血量、下雨等\)，你会发现你的修改没办法马上生效，这时候就需要向玩家发送一个数据包用来告诉客户端你修改的信息  
 
-### **如何发送数据包？**​
+### 如何发送数据包？​
 
-**我们可以调用TSPlayer对象中的SendData方法来发送数据包  
+我们可以调用TSPlayer对象中的SendData方法来发送数据包  
 首先我们需要获取对应的TSPlayer对象，前面教程已经有了，就不在过多赘述  
 注: 如果你需要发送全服数据包玩家对象就是TSPlayer.All  
 然后我们就要使用SendData方法  
@@ -41,11 +41,11 @@ private void TestCmd(CommandArgs args) //以命令为例
 
 此时你应该会想问:  
 WTF\?  
-为什么数据包类型是PlayerHp，为什么参数1是玩家的索引\(player.Index\)，为什么SendData的参数里没有我要改的血量11451\?**  
+为什么数据包类型是PlayerHp，为什么参数1是玩家的索引\(player.Index\)，为什么SendData的参数里没有我要改的血量11451\?  
 
-### **发送数据包\(SendData\)的参数:**​
+### 发送数据包\(SendData\)的参数:​
 
-**这里有一个~~奇怪的误区~~，SendData的参数并不一定是写进数据包的值\(上面例子中:参数1是player.Index而不是TPlayer.statLifeMax\)，对于不同的数据包SendData的参数也会有所不同。想要知道具体参数作用，我们需要反编译NetMessage.orig\_SendData，方法就是直接在可以执行语句的地方打一个NetMessage.orig\_SendData，然后右键orig\_SendData，点击转到定义,等待一下反编译我们就能看到NetMessage.orig\_SendData的代码了  
+这里有一个~~奇怪的误区~~，SendData的参数并不一定是写进数据包的值\(上面例子中:参数1是player.Index而不是TPlayer.statLifeMax\)，对于不同的数据包SendData的参数也会有所不同。想要知道具体参数作用，我们需要反编译NetMessage.orig\_SendData，方法就是直接在可以执行语句的地方打一个NetMessage.orig\_SendData，然后右键orig\_SendData，点击转到定义,等待一下反编译我们就能看到NetMessage.orig\_SendData的代码了  
 
 ![1708706875142.png](Resourse/6704_13e87dfe295685f2e0fe714dd4892f00.png "1708706875142.png")
 
@@ -56,13 +56,13 @@ WTF\?
 
   
 以修改玩家最大生命为例\(修改了玩家的statLifeMax\) 我们直接按Ctrl+F搜索statLifeMax  
-此时搜索到16号数据包的case，所以我们需要发送的就是16号数据包\(PacketTypes.PlayerHp\)**  
+此时搜索到16号数据包的case，所以我们需要发送的就是16号数据包\(PacketTypes.PlayerHp\)  
 
-> **注: 你可以用类似的方法查看PacketTypes的定义来找到数据包类型\(16=>PacketTypes.PlayerHp\)**
+> 注: 你可以用类似的方法查看PacketTypes的定义来找到数据包类型\(16=>PacketTypes.PlayerHp\)
 > 
 > [点击展开...](null)
 
-**如果你嫌麻烦也可以直接使用"\(PacketTypes\)数据包号"  
+如果你嫌麻烦也可以直接使用"\(PacketTypes\)数据包号"  
 \[例如: \(PacketTypes\)16\]  
 我们仔细查看这个case部分不难看出, number\(参数1\)，就是玩家的索引\(number为0时发送索引为0的玩家的生命数据，number为1时发送索引为1的玩家的生命数据...\) \[number2对应参数2，number3对应参数3，有些数据包需要用到字符串参数\(例如: 弹幕文字、断开连接等\)\]  
 
@@ -81,11 +81,11 @@ player.SendData(PacketTypes.PlayerHp,"",玩家索引);
 
 
 
-**
 
-### **再分析一个数据包试试**​
 
-**假设我们现在想把服务器中的世纪之花设置为已击败状态\(NPC.downedPlantBoss=true\),我们现在需要告诉所有的玩家世纪之花已被击败而不是执行命令的人，所以我们需要使用TSPlayer.All作为对象  
+### 再分析一个数据包试试​
+
+假设我们现在想把服务器中的世纪之花设置为已击败状态\(NPC.downedPlantBoss=true\),我们现在需要告诉所有的玩家世纪之花已被击败而不是执行命令的人，所以我们需要使用TSPlayer.All作为对象  
 
 C#：
 
@@ -146,4 +146,3 @@ player.SendData(PacketTypes.PlayerSlot,"",玩家索引,背包格子索引,物品
 
 
 
-**
