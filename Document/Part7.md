@@ -59,8 +59,7 @@ WTF\?
 此时搜索到16号数据包的case，所以我们需要发送的就是16号数据包\(PacketTypes.PlayerHp\)  
 
 > 注: 你可以用类似的方法查看PacketTypes的定义来找到数据包类型\(16=>PacketTypes.PlayerHp\)
-> 
-> [点击展开...](null)
+
 
 如果你嫌麻烦也可以直接使用"\(PacketTypes\)数据包号"  
 \[例如: \(PacketTypes\)16\]  
