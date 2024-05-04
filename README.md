@@ -2,6 +2,8 @@
 - 本仓库是由于BBSTRE关闭而创建的，大部分MD代码是BB代码转换的，所以有些地方会比较奇怪
 - 本插件教程允许任何人提交PR修改
 - 你可以在Issue中提出宝贵的意见
+# 🧪TShock中文插件收集仓库
+- [Controllerdestiny/TShockPlugin](https://github.com/Controllerdestiny/TShockPlugin)
 # 📄前言
 - 本教程是插件入门教程而不是C#入门教程
 - C#入门相关教程请移步B站
