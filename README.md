@@ -19,4 +19,5 @@
 - ## [Part 4.挂钩钩\~\(基本钩子教学\)](Document/Part4.md)​
 - ## [Part 5.玩家对象](Document/Part5.md)​
 - ## [Part 6.发送数据包](Document/Part6.md)​
+- ## [Part 7.插件配置文件](Document/Part7.md)​
 ---

@@ -20,8 +20,8 @@ using Newtonsoft.Json;
 ## 定义配置文件
 
 1. 首先我们要创造一个新的`.cs`文件用来存放我们的配置文件类。我们可以右键`解决方案管理器-添加-类/接口`，文件名一般和类名一样，通常使用`Conifg`
-![alt text](image.png)
-![alt text](image-1.png)
+![alt text](Resourse/image.png)
+![alt text](Resourse/image-1.png)
 
 2.首先我们可以套一个模板
 ```csharp
@@ -102,7 +102,7 @@ public class Config
 namespace TestPlugin;
 ```
 `TestPlugin`就是你插件的命名空间如图 
-![alt text](image-2.png)
+![alt text](Resourse/image-2.png)
 
 #### 配置文件路径问题: 
 ```csharp
