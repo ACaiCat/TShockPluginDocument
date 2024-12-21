@@ -101,7 +101,7 @@ public class Config
 ```csharp
 namespace TestPlugin;
 ```
-`TestPlugin`就是你插件的命名空间如图 
+`TestPlugin`就是你插件的命名空间如图    
 ![alt text](Resourse/image-2.png)
 
 #### 配置文件路径问题: 
