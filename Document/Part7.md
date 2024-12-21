@@ -291,7 +291,7 @@ public class KickEmoji : TerrariaPlugin
     
 }
 ```
-`### Conifg.cs`
+### `Conifg.cs`
 ```csharp
 using Newtonsoft.Json;
 
