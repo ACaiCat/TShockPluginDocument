@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 
 ## 定义配置文件
 
-1. 首先我们要创造一个新的`.cs`文件用来存放我们的配置文件类。我们可以右键`解决方案管理器-添加-类/接口`，文件名一般和类名一样，通常使用`Conifg`
+1. 首先我们要创造一个新的`.cs`文件用来存放我们的配置文件类。我们可以右键`解决方案管理器-添加-类/接口`，文件名一般和类名一样，通常使用`Conifg`  
 ![alt text](Resourse/image.png)
 ![alt text](Resourse/image-1.png)
 
